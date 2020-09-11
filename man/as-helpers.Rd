@@ -2,12 +2,15 @@
 % Please edit documentation in R/as.R
 \name{as_ugm3}
 \alias{as_ugm3}
+\alias{as_person}
 \alias{as_population}
 \alias{as_mortality}
 \alias{as_mortality_rate}
 \title{Set commonly-used units}
 \usage{
 as_ugm3(x)
+
+as_person(x)
 
 as_population(x)
 
