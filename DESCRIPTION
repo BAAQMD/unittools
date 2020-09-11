@@ -1,0 +1,14 @@
+Package: unittools
+Type: Package
+Title: Provides Tools for Working with Unit-Aware Data
+Version: 2020.09.11
+Author: David Holstius
+Maintainer: David Holstius <dholstius@baaqmd.gov>
+Description: Imports the `units` package. Adds a few custom units. Provides a couple of functions.
+Depends:
+  units
+License: BSD
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
