@@ -7,7 +7,7 @@
 #' @param suffix
 #'
 #' @importFrom stringr str_detect str_c
-#' @importFrom strools format_count
+#' @importFrom strtools format_count
 #' @importFrom units set_units
 #'
 #' @return
@@ -43,7 +43,7 @@ format_mortality_rate <- function (
       digits = signif)
 
   formatted <-
-    strools::format_count(
+    strtools::format_count(
       approximated,
       digits = digits)
 
