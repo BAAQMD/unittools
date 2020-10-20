@@ -7,6 +7,7 @@
   install_unit("tput")
   install_unit("person")
   install_unit("death")
+  install_unit("cancer")
   install_unit("veh")
 
   try(

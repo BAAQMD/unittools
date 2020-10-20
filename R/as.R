@@ -21,7 +21,6 @@ as_population <- function (x) {
   as_person(x)
 }
 
-
 #' @rdname as-helpers
 #' @export
 as_mortality <- function (x) {
@@ -32,4 +31,24 @@ as_mortality <- function (x) {
 #' @export
 as_mortality_rate <- function (x, u = "death/Mperson/yr") {
   set_units(x, u, mode = "character")
+}
+
+#' @rdname as-helpers
+#' @export
+as_CANCRISK <- function (x, u = "cancer/Mperson") {
+  set_units(x, u, mode = "character")
+}
+
+as_exposure <- function (x, intensity, duration = NULL, per_capita = FALSE) {
+  u <- str_c("person", intensity, sep = "*")
+  if (isTRUE(per_capita)) {
+    u <- str_c(u, "/person")
+  }
+  u <- str_c(u, duration, sep = "*")
+  set_units(x, u, mode = "character", force_single_symbol = FALSE)
+}
+
+#' @export
+as_ugm3_exposure <- function (...) {
+  as_exposure(..., intensity = "ug/m^3")
 }

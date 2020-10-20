@@ -6,6 +6,7 @@
 \alias{as_population}
 \alias{as_mortality}
 \alias{as_mortality_rate}
+\alias{as_CANCRISK}
 \title{Set commonly-used units}
 \usage{
 as_ugm3(x)
@@ -17,6 +18,8 @@ as_population(x)
 as_mortality(x)
 
 as_mortality_rate(x, u = "death/Mperson/yr")
+
+as_CANCRISK(x, u = "cancer/Mperson")
 }
 \description{
 Set commonly-used units
