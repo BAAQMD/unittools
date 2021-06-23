@@ -7,8 +7,6 @@
   units::install_unit("cancer")
   units::install_unit("veh")
 
-  try(
-    units::install_conversion_constant("VMT", "veh*mi", 1),
-    silent = TRUE)
+  units::install_unit("VMT", "veh mi")
 
 }
