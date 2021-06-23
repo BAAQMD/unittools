@@ -18,6 +18,7 @@
 #' }
 #'
 #' @export
+#' @importFrom dplyr bind_cols %>%
 restore_units <- function (
   to,
   from
