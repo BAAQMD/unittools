@@ -19,6 +19,7 @@
 #'
 #' @export
 #' @importFrom dplyr bind_cols %>%
+#' @importFrom purrr possibly map map2
 restore_units <- function (
   to,
   from

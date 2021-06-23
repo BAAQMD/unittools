@@ -10,7 +10,8 @@ Depends:
 Imports:
   stringr,
   strtools,
-  dplyr
+  dplyr,
+  purrr
 License: BSD
 Encoding: UTF-8
 LazyData: true
