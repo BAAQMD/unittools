@@ -6,6 +6,7 @@
 #' @return
 #' @export
 #'
+#' @importFrom units as_units
 #' @examples
 has_units <- function (x, u = NULL) {
   if (isFALSE(is_units(x))) return(FALSE)

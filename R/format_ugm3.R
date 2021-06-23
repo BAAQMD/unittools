@@ -4,6 +4,7 @@
 #' @param digits
 #'
 #' @return
+#' @importFrom strtools format_digits
 #' @export
 #'
 format_ugm3 <- function (

@@ -1,17 +1,12 @@
+#' @importFrom units install_unit
 .onLoad <- function(libname, pkgname) {
 
-  install_unit <- function (u) {
-    units::install_symbolic_unit(u, warn = FALSE, dimensionless = FALSE)
-  }
+  units::install_unit("tput")
+  units::install_unit("person")
+  units::install_unit("death")
+  units::install_unit("cancer")
+  units::install_unit("veh")
 
-  install_unit("tput")
-  install_unit("person")
-  install_unit("death")
-  install_unit("cancer")
-  install_unit("veh")
-
-  try(
-    units::install_conversion_constant("VMT", "veh*mi", 1),
-    silent = TRUE)
+  units::install_unit("VMT", "veh mi")
 
 }

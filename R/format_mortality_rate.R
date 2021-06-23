@@ -8,7 +8,7 @@
 #'
 #' @importFrom stringr str_detect str_c
 #' @importFrom strtools format_count
-#' @importFrom units set_units
+#' @importFrom units set_units drop_units
 #'
 #' @return
 #' @export
