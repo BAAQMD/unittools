@@ -1,7 +1,7 @@
 Package: unittools
 Type: Package
 Title: Provides Tools for Working with Unit-Aware Data
-Version: 2020.10.20
+Version: 2021.07.06
 Author: David Holstius
 Maintainer: David Holstius <dholstius@baaqmd.gov>
 Description: Imports the `units` package. Adds a few custom units. Provides a couple of functions.
@@ -12,3 +12,12 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
+Collate: 
+    'as.R'
+    'format_mortality_rate.R'
+    'format_ugm3.R'
+    'has_units.R'
+    'is_units.R'
+    'restore_units.R'
+    'try_install_unit.R'
+    'zzz.R'
