@@ -1,17 +1,14 @@
+#' @include try_install_unit.R
+
 .onLoad <- function(libname, pkgname) {
 
-  install_unit <- function (u) {
-    units::install_symbolic_unit(u, warn = FALSE, dimensionless = FALSE)
-  }
+  try_install_unit(symbol = "tput", def = "unitless", name = "throughput")
 
-  install_unit("tput")
-  install_unit("person")
-  install_unit("death")
-  install_unit("cancer")
-  install_unit("veh")
+  try_install_unit(symbol = "person", def = "unitless", name = "person")
+  try_install_unit(symbol = "death", def = "unitless", name = "death")
+  try_install_unit(symbol = "cancer", def = "unitless", name = "cancer")
 
-  try(
-    units::install_conversion_constant("VMT", "veh*mi", 1),
-    silent = TRUE)
+  try_install_unit(symbol = "veh", def = "unitless", name = "vehicle")
+  try_install_unit(symbol = "VMT", def = "1 veh*mi", name = "vehicle-mile")
 
 }
