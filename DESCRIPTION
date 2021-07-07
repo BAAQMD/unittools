@@ -7,6 +7,8 @@ Maintainer: David Holstius <dholstius@baaqmd.gov>
 Description: Imports the `units` package. Adds a few custom units. Provides a couple of functions.
 Depends:
   units
+Imports:
+  stringr
 License: BSD
 Encoding: UTF-8
 LazyData: true
