@@ -7,7 +7,9 @@
 format_ugm3(x, digits = 3)
 }
 \arguments{
-\item{digits}{}
+\item{x}{object that \emph{might} be a \code{units} object}
+
+\item{digits}{(optional) integer}
 }
 \value{
 

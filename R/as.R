@@ -1,6 +1,6 @@
 #' Set commonly-used units
 #'
-#' @rdname as-helpers
+#' @name as-helpers
 
 #' @rdname as-helpers
 #' @export

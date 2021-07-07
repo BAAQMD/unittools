@@ -1,14 +1,14 @@
 #' format_mortality_rate
 #'
-#' @param x
-#' @param units
-#' @param digits
-#' @param signif
-#' @param suffix
+#' @param x object that _might_ be a `units` object
+#' @param units (optional) character, like "death/Mperson"
+#' @param digits (optional) integer
+#' @param signif (optional) integer number of digits, as in [base::signif()]
+#' @param suffix (optional) character
 #'
 #' @importFrom stringr str_detect str_c
 #' @importFrom strtools format_count
-#' @importFrom units set_units
+#' @importFrom units set_units drop_units
 #'
 #' @return
 #' @export
@@ -35,7 +35,7 @@ format_mortality_rate <- function (
     units::set_units(x, stringr::str_c(units, "/yr"), mode = "character")
 
   naive <-
-    drop_units(converted)
+    units::drop_units(converted)
 
   approximated <-
     base::signif(

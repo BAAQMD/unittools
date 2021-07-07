@@ -7,10 +7,12 @@
 has_units(x, u = NULL)
 }
 \arguments{
-\item{u}{}
+\item{x}{object that \emph{might} be a \code{units} object}
+
+\item{u}{character}
 }
 \value{
-
+logical
 }
 \description{
 has_units

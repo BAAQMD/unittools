@@ -13,7 +13,15 @@ format_mortality_rate(
 )
 }
 \arguments{
-\item{suffix}{}
+\item{x}{object that \emph{might} be a \code{units} object}
+
+\item{units}{(optional) character, like "death/Mperson"}
+
+\item{digits}{(optional) integer}
+
+\item{signif}{(optional) integer number of digits, as in \code{\link[base:Round]{base::signif()}}}
+
+\item{suffix}{(optional) character}
 }
 \value{
 
