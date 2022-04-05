@@ -7,11 +7,14 @@
 has_units(x, u = NULL)
 }
 \arguments{
-\item{u}{}
+\item{x}{(vector) to be tested}
+
+\item{u}{(optional) expected units}
 }
 \value{
-
+\code{TRUE} or \code{FALSE}
 }
 \description{
-has_units
+Returns \code{TRUE} if \code{x} is either (a) unitless, or is not of class "units".
+If \code{x} is of class "units", can test whether the units are equal to \code{u}.
 }
