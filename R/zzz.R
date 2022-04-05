@@ -1,17 +1,16 @@
 .onLoad <- function(libname, pkgname) {
 
-  install_unit <- function (u) {
-    units::install_symbolic_unit(u, warn = FALSE, dimensionless = FALSE)
+  quietly_try_install <- function (...) {
+    try(
+      units::install_unit(...),
+      silent = TRUE)
   }
 
-  install_unit("tput")
-  install_unit("person")
-  install_unit("death")
-  install_unit("cancer")
-  install_unit("veh")
-
-  try(
-    units::install_conversion_constant("VMT", "veh*mi", 1),
-    silent = TRUE)
+  quietly_try_install("tput", "unitless")
+  quietly_try_install("person", "unitless")
+  quietly_try_install("death", "unitless")
+  quietly_try_install("cancer", "unitless")
+  quietly_try_install("veh", "unitless")
+  quietly_try_install("VMT", "1 veh*mi")
 
 }
