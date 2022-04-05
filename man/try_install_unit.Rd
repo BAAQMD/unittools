@@ -15,7 +15,7 @@ try_install_unit(
 \item{...}{passed to \code{\link[units:install_unit]{units::install_unit()}}}
 }
 \description{
-Just like \code{units::install_unit()}, except that it does nothing if you try to "re-install" a unitless unit.
+Just like \code{units::install_unit()}, except that it does nothing if you try to "re-install" an existing unit.
 (Unless you pass \code{verbose = TRUE}, in which case it will just output a message to that effect.)
 }
 \note{
