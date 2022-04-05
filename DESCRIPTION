@@ -16,3 +16,10 @@ RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
 Suggests:
     testthat
+Collate: 
+    'as.R'
+    'has_units.R'
+    'is_units.R'
+    'restore_units.R'
+    'try_install_unit.R'
+    'zzz.R'
