@@ -1,3 +1,5 @@
+#' @include try_install_unit.R
+
 .onLoad <- function(libname, pkgname) {
 
   quietly_try_install <- function (...) {
