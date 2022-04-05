@@ -1,11 +1,13 @@
-#' Restore units to tabular data
+#' Restore units to vector or tabular data
 #'
 #' Operations on tabular data or geodata can result in unit-aware columns being returned to a naive state.
 #' This function easily restores them.
 #'
-#' @param to tabular data or geodata
-#' @param from tabular data or geodata
-#' @return same as `from`, but with units set on columns as they were in `to`
+#' @param to numeric vector, tabular data or geodata
+#' @param from same class as `to`
+#' @return same value(s) as `from`, but with units set as they were in `to`
+#'
+#' @importFrom units deparse_unit set_units
 #'
 #' @examples
 #' \dontrun{
@@ -18,43 +20,29 @@
 #' }
 #'
 #' @export
-restore_units <- function (
-  to,
-  from
-) {
+restore_units <- function (to, from) {
+  UseMethod("restore_units")
+}
 
-  # Might support other types in the future
-  stopifnot(inherits(from, "data.frame"))
+#' @rdname restore_units
+#' @export
+restore_units.default <- function (to, from) {
+  if (has_units(from)) {
+    u <- units::deparse_unit(from)
+    return(units::set_units(to, u, mode = "character"))
+  } else {
+    return(to)
+  }
+}
 
-  # Helper function: return NA if not a `units` object; otherwise, return the unit
-  safely_deparse <-
-    purrr::possibly(
-      units::deparse_unit,
-      otherwise = NA)
-
-  # List of units (or NA) associated with each column of `from`
-  unit_list <-
-    purrr::map(
-      from,
-      safely_deparse)
-
-  # If NA or NULL, leave alone, else restore units
-  restore_units_ <- function (x, u) {
-    if (is.null(u) || is.na(u)) {
-      return(x)
-    } else {
-      return(units::set_units(x, u, mode="character"))
+#' @rdname restore_units
+#' @export
+restore_units.data.frame <- function (to, from) {
+  for (j in unlist(which(sapply(from, has_units)))) {
+    nm <- names(from)[j]
+    if (nm %in% names(from)) {
+      to[nm] <- restore_units(to[[nm]], from[[nm]])
     }
   }
-
-  # Restore original units to each column, then re-bind columns
-  restored_data <-
-    purrr::map2(
-      to,
-      unit_list[names(to)],
-      restore_units_) %>%
-    bind_cols()
-
-  return(restored_data)
-
+  return(to)
 }

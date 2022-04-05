@@ -2,17 +2,23 @@
 % Please edit documentation in R/restore_units.R
 \name{restore_units}
 \alias{restore_units}
-\title{Restore units to tabular data}
+\alias{restore_units.default}
+\alias{restore_units.data.frame}
+\title{Restore units to vector or tabular data}
 \usage{
 restore_units(to, from)
+
+\method{restore_units}{default}(to, from)
+
+\method{restore_units}{data.frame}(to, from)
 }
 \arguments{
-\item{to}{tabular data or geodata}
+\item{to}{numeric vector, tabular data or geodata}
 
-\item{from}{tabular data or geodata}
+\item{from}{same class as \code{to}}
 }
 \value{
-same as \code{from}, but with units set on columns as they were in \code{to}
+same value(s) as \code{from}, but with units set as they were in \code{to}
 }
 \description{
 Operations on tabular data or geodata can result in unit-aware columns being returned to a naive state.
