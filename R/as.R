@@ -1,6 +1,8 @@
 #' Set commonly-used units
 #'
+#' @name as-helpers
 #' @rdname as-helpers
+NULL
 
 #' @rdname as-helpers
 #' @export
@@ -39,7 +41,10 @@ as_CANCRISK <- function (x, u = "cancer/Mperson") {
   set_units(x, u, mode = "character")
 }
 
+#' @rdname as-helpers
+#' @export
 as_exposure <- function (x, intensity, duration = NULL, per_capita = FALSE) {
+  .Deprecated()
   u <- str_c("person", intensity, sep = "*")
   if (isTRUE(per_capita)) {
     u <- str_c(u, "/person")
@@ -48,6 +53,7 @@ as_exposure <- function (x, intensity, duration = NULL, per_capita = FALSE) {
   set_units(x, u, mode = "character", force_single_symbol = FALSE)
 }
 
+#' @rdname as-helpers
 #' @export
 as_ugm3_exposure <- function (...) {
   as_exposure(..., intensity = "ug/m^3")
