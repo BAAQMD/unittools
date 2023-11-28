@@ -28,8 +28,8 @@ restore_units <- function (to, from) {
 #' @export
 restore_units.default <- function (to, from) {
   if (has_units(from)) {
-    u <- units::deparse_unit(from)
-    return(units::set_units(to, u, mode = "character"))
+    u <- get_units(from)
+    return(set_units(to, u, mode = "character"))
   } else {
     return(to)
   }
