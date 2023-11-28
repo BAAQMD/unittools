@@ -41,7 +41,7 @@ restore_units.data.frame <- function (to, from) {
   for (j in unlist(which(sapply(from, has_units)))) {
     nm <- names(from)[j]
     if (nm %in% names(from)) {
-      to[nm] <- restore_units(to[[nm]], from[[nm]])
+      to[[nm]] <- restore_units(to[[nm]], from[[nm]])
     }
   }
   return(to)
