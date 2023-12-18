@@ -18,7 +18,8 @@ test_that("restore_units.data.frame() works", {
   from <- data.frame(
     bar = c(3, 4, 99),
     foo = set_units(c(1L, 2L, 99L), "ton/yr"),
-    bap = set_units(c(7, 8, 99), "ug/m^3"))
+    bap = set_units(c(7, 8, 99), "ug/m^3"),
+    wee = set_units(c(1, 1, 1), "km^2"))
 
   to <- data.frame(
     foo = c(1L, 2L),
